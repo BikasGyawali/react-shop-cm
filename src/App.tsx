@@ -6,9 +6,9 @@ import ProductDetails from './components/ProductDetails';
 const App: React.FC = () => {
     return (
         <Router>
-            <div style={{ display: 'flex', height: '100vh' }}>
+            <div style={{ display: 'flex', height: '100vh', overflow: "hidden" }}>
                 {/* Left side: Product details (or placeholder) */}
-                <div style={{ flex: 1 }}>
+                <div style={{ flex: 1, overflowY: "auto" }}>
                     <Routes>
                         <Route path="/product/:id" element={<ProductDetails />} />
                         <Route path="*" element={<div style={{ padding: '20px' }}>Please select a product from the list.</div>} />

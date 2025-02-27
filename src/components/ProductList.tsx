@@ -76,26 +76,26 @@ const ProductList: React.FC = () => {
       </div>
       {filteredData.map((product) => (
         <div key={product.id} className="product-item" onClick={() => handleProductItemClick(product.id)}>
-          <img src={product.images[0]} className="product-image" alt={product.title} />
+          <img src={product.thumbnail} className="product-image" alt={product.title} />
           <div className="product-info">
             <p className="product-title">{product.title}</p>
             <span className="product-price">${product.price}</span>
-            <p className="product-rating">Rating: {product.rating}</p>
-            <p className="product-stock">Stock: {product.stock}</p>
+            <p className="product-other-info">Status: {product.availabilityStatus}</p>
+            <p className="product-other-info">Category: {product.category.toUpperCase()}</p>
+            <p className="product-other-info">Brand: {product.brand}</p>
+            <p className="product-other-info">Minimum Order: {product.minimumOrderQuantity}</p>
+            <p className="product-other-info">Rating: {product.rating} ⭐</p>
+            <p className="product-other-info">Stock: {product.stock}</p>
           </div>
         </div>
       ))}
-      <div style={{ position: "sticky", gap: "10px" }}>
-        <span>
-          <button onClick={handlePrevClick} disabled={page === 1}>
-            Previous Page
-          </button>
-        </span>
-        <span>
-          <button onClick={handleNextClick} disabled={page === totalPages}>
-            Next Page
-          </button>
-        </span>
+      <div style={{ display: "flex", justifyContent: "center", flexWrap: "wrap", gap: "12px", marginTop: "20px" }}>
+        <button onClick={handlePrevClick} disabled={page === 1} style={{ padding: "10px 16px", fontSize: "16px" }}>
+          Previous Page
+        </button>
+        <button onClick={handleNextClick} disabled={page === totalPages} style={{ padding: "10px 16px", fontSize: "16px" }}>
+          Next Page
+        </button>
       </div>
     </aside>
   );

@@ -1,15 +1,23 @@
 /* ProductDetails.css */
+
 .product-details-container {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  position: sticky;
   background-color: #dcc989;
   padding: 20px;
   border-radius: 12px;
-  gap: 20px;
   max-width: 900px;
   margin: 40px auto;
+}
+
+.product-main {
+  display: flex;
   flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
 }
 
 .product-details-image {
@@ -37,9 +45,22 @@
   line-height: 1.5;
 }
 
+.product-details-price-discount {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .product-details-price {
   font-size: 20px;
   color: red;
+  font-weight: bold;
+}
+
+.product-details-discount-percentage {
+  font-size: 20px;
+  color: green;
   font-weight: bold;
 }
 
@@ -54,9 +75,50 @@
   font-weight: 500;
 }
 
+/* Reviews Section */
+.reviews-container {
+  margin: 30px;
+  width: 80%;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.reviews-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.review-item {
+  padding: 15px;
+  border-bottom: 1px solid #ddd;
+}
+
+.review-item:last-child {
+  border-bottom: none;
+}
+
+.review-name {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.review-rating {
+  font-size: 14px;
+  color: #e63946;
+  font-weight: bold;
+}
+
+.review-comment {
+  font-size: 14px;
+  color: #555;
+}
+
 /* --- Responsive Design --- */
 @media (max-width: 768px) {
-  .product-details-container {
+  .product-main {
     flex-direction: column;
     align-items: center;
     text-align: center;
@@ -69,19 +131,6 @@
 
   .product-details-info {
     width: 80%;
-  }
-
-  .product-details-title {
-    font-size: 20px;
-  }
-
-  .product-details-description {
-    font-size: 14px;
-  }
-
-  .product-details-price,
-  .product-details-brand {
-    font-size: 18px;
   }
 }
 
@@ -97,18 +146,5 @@
 
   .product-details-info {
     width: 100%;
-  }
-
-  .product-details-title {
-    font-size: 18px;
-  }
-
-  .product-details-description {
-    font-size: 13px;
-  }
-
-  .product-details-price,
-  .product-details-brand {
-    font-size: 16px;
   }
 }
