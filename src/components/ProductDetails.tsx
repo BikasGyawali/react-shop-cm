@@ -35,12 +35,13 @@ const ProductDetails: React.FC = () => {
             <span className="product-details-price">${productDetails?.price}</span>
             <span className="product-details-discount-percentage">{productDetails?.discountPercentage} % Off</span>
           </div>
-          <p className="product-other-info">Status: {productDetails?.availabilityStatus}</p>
-          <p className="product-other-info">Category: {productDetails?.category.toUpperCase()}</p>
-          <span className="product-details-brand">Brand: {productDetails?.brand}</span>
-          <p className="product-details-rating">Minimum Order: {productDetails?.minimumOrderQuantity}</p>
-          <p className="product-details-rating">Rating: {productDetails?.rating} ⭐</p>
-          <p className="product-details-stock">Stock: {productDetails?.stock}</p>
+          <span className="product-details-other-info">Status: {productDetails?.availabilityStatus}</span>
+          <span className="product-details-other-info">Category: {productDetails?.category.toUpperCase()}</span>
+          <span className="product-details-other-info">Brand: {productDetails?.brand}</span>
+          <span className="product-details-other-info">Minimum Order: {productDetails?.minimumOrderQuantity}</span>
+          <span className="product-details-other-info">{productDetails?.returnPolicy}</span>
+          <span className="product-details-other-info">Rating: {productDetails?.rating} ⭐</span>
+          <span className="product-details-other-info">Stock: {productDetails?.stock}</span>
         </div>
       </div>
 

@@ -80,12 +80,12 @@ const ProductList: React.FC = () => {
           <div className="product-info">
             <p className="product-title">{product.title}</p>
             <span className="product-price">${product.price}</span>
-            <p className="product-other-info">Status: {product.availabilityStatus}</p>
-            <p className="product-other-info">Category: {product.category.toUpperCase()}</p>
-            <p className="product-other-info">Brand: {product.brand}</p>
-            <p className="product-other-info">Minimum Order: {product.minimumOrderQuantity}</p>
-            <p className="product-other-info">Rating: {product.rating} ⭐</p>
-            <p className="product-other-info">Stock: {product.stock}</p>
+            <span className="product-other-info">Status: {product.availabilityStatus}</span>
+            <span className="product-other-info">Category: {product.category.toUpperCase()}</span>
+            <span className="product-other-info">Brand: {product.brand}</span>
+            <span className="product-other-info">Minimum Order: {product.minimumOrderQuantity}</span>
+            <span className="product-other-info">Rating: {product.rating} ⭐</span>
+            <span className="product-other-info">Stock: {product.stock}</span>
           </div>
         </div>
       ))}

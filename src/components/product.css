@@ -31,7 +31,7 @@
   width: 45%;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 5px
 }
 
 .product-details-title {
@@ -64,15 +64,8 @@
   font-weight: bold;
 }
 
-.product-details-brand {
-  font-size: 18px;
-  color: #555;
-}
-
-.product-details-rating,
-.product-details-stock {
+.product-details-other-info {
   font-size: 16px;
-  font-weight: 500;
 }
 
 /* Reviews Section */
@@ -118,6 +111,10 @@
 
 /* --- Responsive Design --- */
 @media (max-width: 768px) {
+  .product-details-container{
+    margin: 3%;
+  }
+
   .product-main {
     flex-direction: column;
     align-items: center;
@@ -131,6 +128,10 @@
 
   .product-details-info {
     width: 80%;
+  }
+
+  .product-details-other-info {
+    font-size: 14px;
   }
 }
 
@@ -146,5 +147,9 @@
 
   .product-details-info {
     width: 100%;
+  }
+
+  .product-details-other-info {
+    font-size: 14px;
   }
 }
