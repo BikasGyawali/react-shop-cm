@@ -16,7 +16,7 @@ const App: React.FC = () => {
                 </div>
 
                 {/* Right side: Product list */}
-                <div style={{ width: '25vw', borderLeft: '1px solid #ccc', overflowY: 'auto', padding: '0 20px 20px 20px' }}>
+                <div style={{ width: '25vw', overflowY: 'auto', padding: '0 20px 20px 20px' }}>
                     <ProductList />
                 </div>
             </div>

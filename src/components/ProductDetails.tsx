@@ -17,6 +17,12 @@ const ProductDetails: React.FC = () => {
     getProductDetails();
   }, [id]);
 
+  const getDiscountedPrice=(actualPrice: number, discountPercentage: number): number=>{
+      let discountPrice= (discountPercentage/100)*actualPrice;
+      let priceAfterDiscount= (actualPrice-Number(discountPrice)).toFixed(2)
+      return Number(priceAfterDiscount);
+  }
+
   return (
     <div className="product-details-container">
       {/* Main Product Section */}
@@ -32,16 +38,17 @@ const ProductDetails: React.FC = () => {
           <h2 className="product-details-title">{productDetails?.title}</h2>
           <p className="product-details-description">{productDetails?.description}</p>
           <div className="product-details-price-discount">
-            <span className="product-details-price">${productDetails?.price}</span>
-            <span className="product-details-discount-percentage">{productDetails?.discountPercentage} % Off</span>
+            <span className="product-details-price">Price: ${productDetails?.price}</span>
+            <span className="product-details-discount-percentage">Offer-Price: ${getDiscountedPrice(productDetails?.price, productDetails.discountPercentage)} - {productDetails?.discountPercentage} % Off</span>
+            {/* <span className="product-details-discount-percentage">{productDetails?.discountPercentage} % Off</span> */}
           </div>
-          <span className="product-details-other-info">Status: {productDetails?.availabilityStatus}</span>
+          <span className="product-details-status">Status: {productDetails?.availabilityStatus}</span>
+          <span className="product-details-stock">Stock: {productDetails?.stock}</span>
           <span className="product-details-other-info">Category: {productDetails?.category.toUpperCase()}</span>
           <span className="product-details-other-info">Brand: {productDetails?.brand}</span>
           <span className="product-details-other-info">Minimum Order: {productDetails?.minimumOrderQuantity}</span>
           <span className="product-details-other-info">{productDetails?.returnPolicy}</span>
           <span className="product-details-other-info">Rating: {productDetails?.rating} ⭐</span>
-          <span className="product-details-other-info">Stock: {productDetails?.stock}</span>
         </div>
       </div>
 
@@ -51,6 +58,7 @@ const ProductDetails: React.FC = () => {
         {productDetails?.reviews && productDetails.reviews.length > 0 ? (
           productDetails.reviews.map((review, index) => (
             <div key={index} className="review-item">
+              <p className="review-date">{`${new Date(review?.date).getFullYear()}-${new Date(review?.date).getMonth() + 1}-${new Date(review?.date).getDate()}`}</p>
               <p className="review-name">{review.reviewerName}</p>
               <p className="review-rating">Rating: {review.rating} ⭐</p>
               <p className="review-comment">"{review.comment}"</p>

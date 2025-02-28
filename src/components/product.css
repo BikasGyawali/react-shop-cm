@@ -5,7 +5,7 @@
   flex-direction: column;
   align-items: center;
   position: sticky;
-  background-color: #dcc989;
+  background-color: #F1F0E9;
   padding: 20px;
   border-radius: 12px;
   max-width: 900px;
@@ -53,14 +53,20 @@
 }
 
 .product-details-price {
-  font-size: 20px;
+  font-size: 18px;
   color: red;
   font-weight: bold;
 }
 
 .product-details-discount-percentage {
-  font-size: 20px;
+  font-size: 18px;
   color: green;
+  font-weight: bold;
+}
+
+.product-details-status,
+.product-details-stock {
+  font-size: 16px;
   font-weight: bold;
 }
 
@@ -93,6 +99,11 @@
   border-bottom: none;
 }
 
+.review-date {
+  font-size: 16px;
+  font-weight: bold;
+}
+
 .review-name {
   font-size: 16px;
   font-weight: bold;
@@ -112,13 +123,22 @@
 /* --- Responsive Design --- */
 @media (max-width: 768px) {
   .product-details-container{
-    margin: 3%;
+    margin: 10%;
   }
 
   .product-main {
     flex-direction: column;
     align-items: center;
     text-align: center;
+  }
+
+  .product-details-title {
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+  .product-details-description {
+    font-size: 14px;
   }
 
   .product-details-image {
@@ -133,6 +153,46 @@
   .product-details-other-info {
     font-size: 14px;
   }
+
+  .product-details-price-discount {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .product-details-price {
+    font-size: 14px;
+  }
+  
+  .product-details-discount-percentage {
+    font-size: 14px;
+  }
+
+  .review-date {
+    font-size: 14px;
+    font-weight: bold;
+  }
+  
+  .review-name {
+    font-size: 14px;
+    font-weight: bold;
+  }
+  
+  .review-rating {
+    font-size: 12px;
+    color: #e63946;
+    font-weight: bold;
+  }
+  
+  .review-comment {
+    font-size: 12px;
+    color: #555;
+  }
+
+  .product-details-status,
+.product-details-stock {
+  font-size: 14px;
+}
+
 }
 
 @media (max-width: 480px) {
@@ -151,5 +211,10 @@
 
   .product-details-other-info {
     font-size: 14px;
+  }
+
+  .product-details-price-discount {
+    display: flex;
+    flex-direction: column;
   }
 }

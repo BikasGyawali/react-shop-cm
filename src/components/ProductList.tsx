@@ -76,7 +76,9 @@ const ProductList: React.FC = () => {
       </div>
       {filteredData.map((product) => (
         <div key={product.id} className="product-item" onClick={() => handleProductItemClick(product.id)}>
-          <img src={product.thumbnail} className="product-image" alt={product.title} />
+          <div>
+            <img src={product.thumbnail} className="product-image" alt={product.title} />
+          </div>
           <div className="product-info">
             <p className="product-title">{product.title}</p>
             <span className="product-price">${product.price}</span>
